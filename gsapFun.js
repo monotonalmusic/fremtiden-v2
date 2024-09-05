@@ -74,7 +74,7 @@ gsap.fromTo(
     x: -275,
     scrollTrigger: {
       trigger: ".konkurrence-header",
-      start: "top 80%",
+      start: "top 60%",
       end: "bottom 20%",
       scrub: true,
     },
@@ -87,7 +87,7 @@ gsap.fromTo(
     x: 275,
     scrollTrigger: {
       trigger: ".konkurrence-header",
-      start: "top 80%",
+      start: "top 60%",
       end: "bottom 20%",
       scrub: true,
     },
