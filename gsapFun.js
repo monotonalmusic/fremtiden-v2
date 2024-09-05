@@ -3,14 +3,14 @@ let mm = gsap.matchMedia();
 
 var tl = gsap.timeline();
 
-tl.from(".site-header", {
+tl.from(".site-header, .header-center, .pdf-button", {
   duration: 2,
   y: -100,
   ease: "circ",
 });
 
 tl.from(
-  ".arbejdsmarkedet-header, .arbejdsmarkedet-img",
+  ".arbejdsmarkedet-header, .arbejdsmarkedet-img, .arbejdsmarkedet-text",
   {
     duration: 4,
     x: -300,
@@ -38,16 +38,6 @@ gsap.utils.toArray(".crossout").forEach((text) => {
     ease: "none", // No easing for a linear effect
   });
 });
-
-gsap.from(
-  ".pdf-button",
-  {
-    duration: 3,
-    x: 100,
-    ease: "circ",
-  },
-  ".5"
-);
 
 gsap.to(".konkurrence-header", {
   duration: 2,
