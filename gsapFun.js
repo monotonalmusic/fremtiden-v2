@@ -68,8 +68,25 @@ gsap.from(".krig-img", {
   },
 });
 
-mm.add("(max-width: 800px)", () => {
-  // this setup code only runs when viewport is at least 800px wide
+mm.add("(min-width: 800px)", () => {
+  gsap.fromTo(
+    ".konkurrence-img-reverse",
+    { x: 100 },
+    {
+      x: -275,
+      scrollTrigger: {
+        trigger: ".konkurrence-header",
+        start: "top 60%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    }
+  );
+});
+
+// Mobile version
+
+mm.add("(max-width: 799px)", () => {
   gsap.fromTo(
     ".konkurrence-img-reverse",
     { x: 100 },
@@ -77,38 +94,20 @@ mm.add("(max-width: 800px)", () => {
       x: -150,
       scrollTrigger: {
         trigger: ".konkurrence-header",
-        start: "top 60%",
+        start: "top 50%",
         end: "bottom 20%",
         scrub: true,
       },
     }
   );
-
-  return () => {
-    // optional
-    gsap.fromTo(
-      ".konkurrence-img-reverse",
-      { x: 100 },
-      {
-        x: -275,
-        scrollTrigger: {
-          trigger: ".konkurrence-header",
-          start: "top 60%",
-          end: "bottom 20%",
-          scrub: true,
-        },
-      }
-    );
-  };
 });
 
-mm.add("(max-width: 800px)", () => {
-  // this setup code only runs when viewport is at least 800px wide
+mm.add("(min-width: 800px)", () => {
   gsap.fromTo(
     ".konkurrence-img",
     { x: -100 },
     {
-      x: 150,
+      x: 275,
       scrollTrigger: {
         trigger: ".konkurrence-header",
         start: "top 60%",
@@ -117,23 +116,24 @@ mm.add("(max-width: 800px)", () => {
       },
     }
   );
+});
 
-  return () => {
-    // optional
-    gsap.fromTo(
-      ".konkurrence-img",
-      { x: -100 },
-      {
-        x: 275,
-        scrollTrigger: {
-          trigger: ".konkurrence-header",
-          start: "top 60%",
-          end: "bottom 20%",
-          scrub: true,
-        },
-      }
-    );
-  };
+// Mobile version
+
+mm.add("(max-width: 799px)", () => {
+  gsap.fromTo(
+    ".konkurrence-img",
+    { x: -100 },
+    {
+      x: 150,
+      scrollTrigger: {
+        trigger: ".konkurrence-header",
+        start: "top 50%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    }
+  );
 });
 
 gsap.to(".bevisthed-question", {
