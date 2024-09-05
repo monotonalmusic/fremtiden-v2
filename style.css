@@ -47,11 +47,11 @@ h3 {
 section {
   margin-bottom: 12vw;
 }
-
+/* 
 header {
   background-image: url("https://monotonalmusic.github.io/fremtiden-v2/assets/pawel-czerwinski-6lQDFGOB1iw-unsplash.jpg");
   background-size: cover;
-}
+} */
 
 .site-header {
   text-decoration: underline;
