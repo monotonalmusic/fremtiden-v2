@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+let mm = gsap.matchMedia();
 
 var tl = gsap.timeline();
 
@@ -67,32 +68,73 @@ gsap.from(".krig-img", {
   },
 });
 
-gsap.fromTo(
-  ".konkurrence-img-reverse",
-  { x: 100 },
-  {
-    x: -275,
-    scrollTrigger: {
-      trigger: ".konkurrence-header",
-      start: "top 60%",
-      end: "bottom 20%",
-      scrub: true,
-    },
-  }
-);
-gsap.fromTo(
-  ".konkurrence-img",
-  { x: -100 },
-  {
-    x: 275,
-    scrollTrigger: {
-      trigger: ".konkurrence-header",
-      start: "top 60%",
-      end: "bottom 20%",
-      scrub: true,
-    },
-  }
-);
+mm.add("(max-width: 800px)", () => {
+  // this setup code only runs when viewport is at least 800px wide
+  gsap.fromTo(
+    ".konkurrence-img-reverse",
+    { x: 100 },
+    {
+      x: -150,
+      scrollTrigger: {
+        trigger: ".konkurrence-header",
+        start: "top 60%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    }
+  );
+
+  return () => {
+    // optional
+    gsap.fromTo(
+      ".konkurrence-img-reverse",
+      { x: 100 },
+      {
+        x: -275,
+        scrollTrigger: {
+          trigger: ".konkurrence-header",
+          start: "top 60%",
+          end: "bottom 20%",
+          scrub: true,
+        },
+      }
+    );
+  };
+});
+
+mm.add("(max-width: 800px)", () => {
+  // this setup code only runs when viewport is at least 800px wide
+  gsap.fromTo(
+    ".konkurrence-img",
+    { x: -100 },
+    {
+      x: 150,
+      scrollTrigger: {
+        trigger: ".konkurrence-header",
+        start: "top 60%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    }
+  );
+
+  return () => {
+    // optional
+    gsap.fromTo(
+      ".konkurrence-img",
+      { x: -100 },
+      {
+        x: 275,
+        scrollTrigger: {
+          trigger: ".konkurrence-header",
+          start: "top 60%",
+          end: "bottom 20%",
+          scrub: true,
+        },
+      }
+    );
+  };
+});
 
 gsap.to(".bevisthed-question", {
   rotation: 360,
